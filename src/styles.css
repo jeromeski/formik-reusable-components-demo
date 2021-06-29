@@ -16,9 +16,26 @@ label {
 
 .error {
   color: red;
+  font-size: 0.85rem;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
+}
+
+/* Utilities */
+
+.mr-2 {
+  margin-right: 5px;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+small {
+  color: grey;
+  font-weight: 400;
 }
