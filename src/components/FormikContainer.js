@@ -27,7 +27,8 @@ function FormikContainer() {
     description: '',
     selectOption: '',
     radioOption: '',
-    checkboxOption: []
+    checkboxOption: [],
+    birthDate: null
   };
   const validationSchema = Yup.object({
     email: Yup.string().required('Required!'),
@@ -37,7 +38,8 @@ function FormikContainer() {
       .max(50, 'Must be at least 5 to 100 characters'),
     selectOption: Yup.string().required('Choose one!'),
     radioOption: Yup.string().required('Choose one!'),
-    checkboxOption: Yup.array().required('Choose one!')
+    checkboxOption: Yup.array().required('Choose one!'),
+    birthDate: Yup.date().required('Required').nullable()
   });
   const onSubmit = (values) => console.log('Form Data :', values);
   return (
@@ -80,6 +82,8 @@ function FormikContainer() {
             label="Pick your poison"
             options={checkboxOptions}
           />
+
+          <FormikControl control="date" name="birthDate" label="Pick a date" />
 
           <button type="submit">Submit</button>
           <br />
