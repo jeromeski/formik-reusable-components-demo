@@ -16,11 +16,18 @@ function FormikContainer() {
     { key: 'Option 3', value: 'rOption3' }
   ];
 
+  const checkboxOptions = [
+    { key: 'Option 1', value: 'cOption1' },
+    { key: 'Option 2', value: 'cOption2' },
+    { key: 'Option 3', value: 'cOption3' }
+  ];
+
   const initialValues = {
     email: '',
     description: '',
     selectOption: '',
-    radioOption: ''
+    radioOption: '',
+    checkboxOption: []
   };
   const validationSchema = Yup.object({
     email: Yup.string().required('Required!'),
@@ -29,7 +36,8 @@ function FormikContainer() {
       .min(10, 'Must be at least 5 to 100 characters')
       .max(50, 'Must be at least 5 to 100 characters'),
     selectOption: Yup.string().required('Choose one!'),
-    radioOption: Yup.string().required('Choose one!')
+    radioOption: Yup.string().required('Choose one!'),
+    checkboxOption: Yup.array().required('Choose one!')
   });
   const onSubmit = (values) => console.log('Form Data :', values);
   return (
@@ -64,6 +72,13 @@ function FormikContainer() {
             name="radioOption"
             label="Select a choice"
             options={radioOptions}
+          />
+
+          <FormikControl
+            control="checkbox"
+            name="checkboxOption"
+            label="Pick your poison"
+            options={checkboxOptions}
           />
 
           <button type="submit">Submit</button>
