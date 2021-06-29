@@ -3,16 +3,16 @@ import React from 'react';
 import TextError from './TextError';
 
 function RadioButtons(props) {
-  const { name, label, options, ...rest } = props;
+  const { name, label, options } = props;
   return (
-    <div className="form-control ">
+    <div className="form-control">
       <label>{label}</label>
       <Field name={name}>
         {({ field }) => {
           // console.log('field :', field);
           return options.map((option) => (
             <React.Fragment key={option.key}>
-              <div className="d-flex">
+              <div>
                 <input
                   type="radio"
                   id={option.value}
