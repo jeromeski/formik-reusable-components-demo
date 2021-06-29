@@ -1,10 +1,12 @@
-import FormikContainer from "./components/FormikContainer";
-import "./styles.css";
+import FormikContainer from './components/FormikContainer';
+import LoginForm from './components/LoginForm';
+import './styles.css';
 
 export default function App() {
   return (
     <div className="App">
-      <FormikContainer />
+      {/* <FormikContainer /> */}
+      <LoginForm />
     </div>
   );
 }
