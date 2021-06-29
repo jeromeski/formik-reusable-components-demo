@@ -18,6 +18,7 @@ label {
 .error {
   color: red;
   font-size: 0.85rem;
+  margin-top: 0.25rem;
 }
 
 .form-control {
@@ -39,4 +40,12 @@ label {
 small {
   color: grey;
   font-weight: 400;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.mt-3 {
+  margin-top: 3px;
 }
